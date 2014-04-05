@@ -5,16 +5,16 @@ describe "StaticPages" do
 	
   describe "Home page" do
     it "should have the content 'Sample App" do
-      visit '/static_pages/home'
+      visit root_path
       expect(page).to have_content('Sample App')
     end
     it "should have the right title" do
-    	visit '/static_pages/home'
+    	visit root_path
     	expect(page).to have_title("#{base_title}")
     	
     end
     it "should not have a custome page title" do
-      visit '/static_pages/home'
+      visit root_path
       expect(page).not_to have_title(' | Home')
       
     end
@@ -22,35 +22,35 @@ describe "StaticPages" do
 
   describe "Help Page" do
   	it "should have the content 'Help'" do
-  		visit '/static_pages/help'
+  		visit help_path
   		expect(page).to have_content('Help')
   		
   	end
   	it "should have the right title" do
-  		visit '/static_pages/help'
+  		visit help_path
   		expect(page).to have_title("#{base_title} | Help")
   		
   	end
   end
 
   describe "About page" do
-  	it "should have the content 'About Us'" do
-  		visit '/static_pages/about'
-  		expect(page).to have_content('About Us')
+  	it "should have the content 'About'" do
+  		visit help_path
+  		expect(page).to have_content('About')
   	end
   	it "should have the right title" do
-  		visit '/static_pages/about'
+  		visit help_path
   		expect(page).to have_title("#{base_title} | About")
   		
   	end
   end
   describe "Contact page" do
   	it "should have the content 'Contact" do
-  		visit '/static_pages/contact'
+  		visit contact_path
   		expect(page).to have_content('Contact')
   	end
   	it "should have the right title" do
-  		visit '/static_pages/contact'
+  		visit contact_path
   		expect(page).to have_title("#{base_title} | Contact")
   	end
   	
